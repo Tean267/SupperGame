@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "7b6add51-3f1d-40cc-b613-13c8712065af",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35087806",
+		"_collection_link": "https://solar-astronaut-385877.postman.co/workspace/Super_game~b5da2649-fc8e-4b9a-81b7-72842b388a38/collection/35087806-7b6add51-3f1d-40cc-b613-13c8712065af?action=share&source=collection_link&creator=35087806"
+	},
+	"item": [
+		{
+			"name": "sig up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"tean100602\",\r\n    \"password\":\"123123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/sign-up",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"sign-up"
+					]
+				},
+				"description": "Endpoint này cho phép người dùng mới đăng ký tài khoản. Người dùng sẽ cung cấp các thông tin cần thiết, và hệ thống sẽ tạo một tài khoản người dùng mới."
+			},
+			"response": []
+		},
+		{
+			"name": "sig in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"tean100602\",\r\n    \"password\":\"123123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/sign-in",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"sign-in"
+					]
+				},
+				"description": "Endpoint này cho phép người dùng đăng nhập vào hệ thống bằng cách cung cấp tên người dùng (hoặc địa chỉ email) và mật khẩu. Nếu thông tin đăng nhập là chính xác, hệ thống sẽ trả về một token JWT để người dùng có thể sử dụng trong các yêu cầu API tiếp theo"
+			},
+			"response": []
+		},
+		{
+			"name": "check in",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwNCIsImlhdCI6MTcyMTM2MzA4MywiZXhwIjoxNzIyNTcyNjgzfQ.Yc-Rf59NGwa15_-elsWat-D_zXR4-lnIQJ_mc8JTnCJfNSQwCoSI6Y1nM5ad-tS6XYSx6lWbycWBds9J122gfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timestamp\": \"2024-07-18T15:40:00-07:00\" // ISO 8601 format with timezone offset\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/check-in",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"check-in"
+					]
+				},
+				"description": "\\### Check In User  \nEndpoint này cho phép người dùng điểm danh để nhận điểm thưởng hoặc để thực hiện các hành động liên quan đến việc điểm danh trong hệ thống. Người dùng cần cung cấp thông tin về thời gian điểm danh, và hệ thống sẽ kiểm tra tính hợp lệ của điểm danh, cập nhật trạng thái và thông tin liên quan."
+			},
+			"response": []
+		},
+		{
+			"name": "get profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwNCIsImlhdCI6MTcyMTM2MzA4MywiZXhwIjoxNzIyNTcyNjgzfQ.Yc-Rf59NGwa15_-elsWat-D_zXR4-lnIQJ_mc8JTnCJfNSQwCoSI6Y1nM5ad-tS6XYSx6lWbycWBds9J122gfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/user/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"profile"
+					]
+				},
+				"description": "Endpoint này cho phép người dùng lấy thông tin hồ sơ của chính mình"
+			},
+			"response": []
+		},
+		{
+			"name": "get point-transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwNCIsImlhdCI6MTcyMTM2MzA4MywiZXhwIjoxNzIyNTcyNjgzfQ.Yc-Rf59NGwa15_-elsWat-D_zXR4-lnIQJ_mc8JTnCJfNSQwCoSI6Y1nM5ad-tS6XYSx6lWbycWBds9J122gfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/user/point-transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"point-transaction"
+					]
+				},
+				"description": "Endpoint này cho phép người dùng xem lịch sử điểm danh của mình"
+			},
+			"response": []
+		},
+		{
+			"name": "check attendance-status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwNCIsImlhdCI6MTcyMTM2MzA4MywiZXhwIjoxNzIyNTcyNjgzfQ.Yc-Rf59NGwa15_-elsWat-D_zXR4-lnIQJ_mc8JTnCJfNSQwCoSI6Y1nM5ad-tS6XYSx6lWbycWBds9J122gfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timestamp\": \"2024-07-18T11:40:00-07:00\" // ISO 8601 format with timezone offset\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/attendance-status",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"attendance-status"
+					]
+				},
+				"description": "Endpoint này cho phép người dùng kiểm tra xem họ có đủ điều kiện để thực hiện điểm danh trong thời điểm hiện tại hay không"
+			},
+			"response": []
+		}
+	]
+}

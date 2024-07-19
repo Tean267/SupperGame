@@ -1,0 +1,29 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: Super_game
+  datasource:
+    username: root
+    password: tuananhhalong123
+    url: jdbc:mysql://localhost:3306/super_game
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  data:
+    redis:
+      host: localhost
+      password: teandz123
+      port: 6379
+      timeout: 60000
+      db: 0
+  jwt:
+    secret: SQjZekMdeoCDoyjwNYsFjTxeyE+grierewrewrerwereferweerr3ru7ikyuywrewrweetweerrbfghsdwrwetewerwevxczvTJgpukbIu2g9obnOwbuoc44i3+bA3IrN52PH1qW98U8sLAPkhcgEFAMJQWzIbRunQVDHSuRQSsO7PyoGvcUol1tBz2GoIADuI+JzLkdSrRHgw5Hgux9+lw1g==
+    expire: 1209600000
